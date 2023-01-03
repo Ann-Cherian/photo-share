@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       </Head>
       <h1>This is the INSTAGRAM 2.0 BUILD</h1>
       {/* Header */}
+      <Header />
 
       {/* Feed */}
 
