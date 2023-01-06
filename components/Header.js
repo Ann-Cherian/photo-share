@@ -6,14 +6,19 @@ import {
     UserGroupIcon,
     HeartIcon,
     PaperAirplaneIcon,
-    MenuIcon
+    MenuIcon,
+
+    
 } from "@heroicons/react/24/outline";
+
+import { Bars3Icon, HomeIcon } from "@heroicons/react/24/solid";
+
 
 function Header() {
     return(
-        <div>
+        <div className="shadow-sm border-b bg-white sticky top-0 z-50">
             
-           <div className="flex justify-between max-w-6xl"> 
+           <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto"> 
             {/* Left */}
             <div className="relative hidden lg:inline-grid  w-24 cursor-pointer">
                 <Image src="https://links.papareact.com/ocw  " layout="fill" objectFit="contain" />
@@ -37,6 +42,22 @@ function Header() {
             
 
             {/* Right */}
+            <div className="flex items-center justify-end space-x-4">
+
+            <HomeIcon className="navBtn"/>
+            <Bars3Icon className="h-6 md:hidden cursor-pointer"/>
+            <div className="relative navBtn">
+            <PaperAirplaneIcon className="navBtn -rotate-45"/>
+            <div className="absolute -top-3 -right-3 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white" >3</div>
+
+            </div>
+            <PlusCircleIcon className="navBtn"/>
+            <UserGroupIcon className="navBtn"/>
+            <HeartIcon className="navBtn"/>
+            <img src="https://links.papareact.com/3ke" alt="profile pic" className="h-10 w-10 rounded-full cursor-pointer navBtn"/>
+            </div>
+
+
             </div>
         </div>
 
