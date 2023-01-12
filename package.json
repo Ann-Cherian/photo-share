@@ -9,6 +9,7 @@
     "@heroicons/react": "^2.0.13",
     "faker": "^6.6.6",
     "next": "latest",
+    "next-auth": "^4.18.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-scrollbar-hide": "^1.1.7"
