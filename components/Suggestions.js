@@ -13,7 +13,7 @@ function Suggestions(){
             password: faker.internet.password(),
             birthdate: faker.date.birthdate(),
             registeredAt: faker.date.past(),
-            company: faker.company.companyName(),
+            company: faker.company.name(),
         }));
         setSuggestions(suggestions);
      }, []);
