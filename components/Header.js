@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
     
     MagnifyingGlassIcon,
@@ -13,24 +13,27 @@ import {
 
 import {  HomeIcon } from "@heroicons/react/24/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useRecoilState} from "recoil";
+import { modalState } from "../atoms/modalAtom";
 
 
 function Header() {
     const { data: session } = useSession();
+    const [open, setOpen] = useRecoilState(modalState);
+    const router = useRouter();
 
     //console.log(session);
-
-
     return(
         <div className="shadow-sm border-b bg-white sticky top-0 z-50">
             
            <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto"> 
             {/* Left */}
-            <div className="relative hidden lg:inline-grid  w-24 cursor-pointer">
+            <div onClick={() => router.push('/')} className="relative hidden lg:inline-grid  w-24 cursor-pointer">
                 <Image src="https://links.papareact.com/ocw  " layout="fill" objectFit="contain" />
             </div>
 
-            <div className="relative w-10  lg:hidden flex-shrink-0 cursor-pointer">
+            <div onClick={() => router.push('/')} className="relative w-10  lg:hidden flex-shrink-0 cursor-pointer">
             <Image src="https://links.papareact.com/jjm  " layout="fill" objectFit="contain" />
             </div>
 
@@ -50,7 +53,7 @@ function Header() {
             {/* Right */}
             <div className="flex items-center justify-end space-x-4">
 
-            <HomeIcon className="navBtn"/>
+            <HomeIcon onClick={() => router.push('/')} className="navBtn"/>
             <Bars3Icon className="h-6 md:hidden cursor-pointer"/>
 
             {session ? (
@@ -60,7 +63,7 @@ function Header() {
             <div className="absolute -top-3 -right-3 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white" >3</div>
 
             </div>
-            <PlusCircleIcon className="navBtn"/>
+            <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn"/>
             <UserGroupIcon className="navBtn"/>
             <HeartIcon className="navBtn"/>
             
