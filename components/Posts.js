@@ -18,7 +18,7 @@ function Posts() {
      [db]
     );
 
-    console.log(posts);
+    //console.log(posts);
 
     return (
         <div>
@@ -32,15 +32,8 @@ function Posts() {
                 caption={post.data().caption}
             />
         ))}
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            {/* Post */}
-            {/* Post */}
-            {/* Post */}
-            {/* Post */}
-            {/* Post */}
+            
+            
         </div>
     );
 }
